@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/TTS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fredoka+One&family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/button-72.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+      <div class="">
+        <img class="logo" src="./images/Anigen2.png" alt="">
+      </div>
+      <div class="">
+        <h1>Turn Your Text into Speech</h1>
+      </div>
+      <div class=" Text">
+        <p><textarea id="editor" name="editor" rows="" dir="ltr" style="width: 620px; height: 100px"></textarea></p>
+        <p><span id="response"></span></p>
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <button onclick="display()" class="button-72" name="speak">Speak</button><br /><br />
+                  <!-- <button class="button-72" id="play" name="speak" style="display:none;">Play</button><br /><br /> -->
+                  <!-- <audio id="audio" controls autoplay hidden></audio>
+                  <input type="file" id="upload" />
+                  <audio id="audio" controls>
+                    <source src="" id="src" />
+                  </audio> -->
+                  <p id="message"></p>
+                  <p id="tt"></p>
+              </div>
+          </div>
+      </div>
+
+        <p id="action">
+        <button class="button-72" id="selectAll" style="margin-bottom:1em;"class="CopyText">Select All</button>
+        <!-- <button class="button-72" style="float:right;margin-right:42.3em;margin-top:-1em;" onclick="saveTextAsFile()">Notepad</button>
+        <button class="button-72" style="float:right;margin-right:35em;margin-top:-1em;" onclick="saveDocAsFile()">MS Word</button> -->
+        <button class="button-72" style="float:right;margin-right:43.5em;margin-top:-3em;" id="undo">Undo</button>
+        <button class="button-72" style="float:right;margin-right:37.5em;margin-top:-3em;" id="redo">Redo</button>
+        <button class="button-72" style="float:right;margin-right:30.2em;margin-top:-3em;" onClick="ClearExitorText();">Clear All</button>
+        <button class="button-72" style="float:right;margin-right:26.5em;margin-top:-3em;" title="Shrink letters" id="shrink">-</button>
+        <button class="button-72" style="float:right;margin-right:22.5em;margin-top:-3em;" title="Enlarge letters" id="enlarge">+</button>
+  </p>
+        <div id="keyboard"></div>
+      </div>
+
+
+    </div>
+    <script src="./js/audio.js"></script>
+
+    <script type="text/javascript">
+    function display(){
+      document.getElementById("play").style.display=block;
+    }
+     function myFunction1() {
+        etoh.editor.value+='।';
+    	document.getElementById("editor").focus();
+    }
+    function myFunction2() {
+        etoh.editor.value+='॥';
+    	document.getElementById("editor").focus();
+    }
+    function myFunction3() {
+        etoh.editor.value+='॰';
+    	document.getElementById("editor").focus();
+    }
+    function myFunction5() {
+        etoh.editor.value+=' ॐ ';
+    	document.getElementById("editor").focus();
+    }
+    function saveTextAsFile()
+    {
+        var textToSave = document.getElementById("editor").value;
+        var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+        var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+        //var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+    	var fileNameToSaveAs = "TypingTester.txt";
+
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        downloadLink.href = textToSaveAsURL;
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+
+        downloadLink.click();
+    }
+
+    // for save as doc file
+
+    function saveDocAsFile()
+    {
+        var textToSave = document.getElementById("editor").value;
+        var textToSaveAsBlob = new Blob([textToSave], {type:"text/Doc"});
+        var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+        //var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+         var fileNameToSaveAs = "TypingTester.doc";
+
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        downloadLink.href = textToSaveAsURL;
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+
+        downloadLink.click();
+    }
+
+
+    function destroyClickedElement(event)
+    {
+        document.body.removeChild(event.target);
+    }
+
+    // for copy text
+       var copyTextareaBtn = document.querySelector('.CopyText');
+
+    copyTextareaBtn.addEventListener('click', function(event) {
+      var copyTextarea = document.querySelector('.js-copytextarea');
+      copyTextarea.select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+      } catch (err) {
+        console.log('Oops, unable to copy');
+      }
+    });
+     </script>
+
+     <script src="./js/TTS.js" charset="utf-8"></script> -->
+     <script src="./js/upload.js" charset="utf-8"></script>
+  </body>
+</html>

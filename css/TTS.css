@@ -1,0 +1,110 @@
+body{
+    /* background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
+   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+   margin-left: 5vw;
+}
+.logo{
+  width: 10%;
+  height: 10%;
+  margin-top: 2vw;
+}
+.box{
+  margin-top: -1.5em;
+  width:42em;
+  height: 30em;
+  border: solid white 0.2em;
+
+}
+
+h1{
+  font-family: Fuzzy Bubbles;
+  font-size: 4vw;
+  color: white;
+  margin-left: 18vw;
+  margin-top: -10vw;
+}
+#i2soft-keyboard{
+  width:630px;
+  line-height:20px;
+  font-size:1em
+}
+ .i2soft-key,#i2soft-backspace,#i2soft-tab,#i2soft-k25,#i2soft-caps-lock,#i2soft-enter,#i2soft-left-shift,#i2soft-right-shift,#i2soft-space,#i2soft-left-ctrl,#i2soft-right-ctrl,#i2soft-left-alt,#i2soft-right-alt,#i2soft,#i2soft-escape{
+  float:left;
+  display:block;
+  margin:1px;
+  height:3em;
+  line-height:2.75em;
+  text-align:center;
+  color:gray
+}
+ .Text{
+  margin-left: 20vw;
+}
+ .i2soft-key{
+  width:40px
+}
+#i2soft-backspace{
+  width:78px
+}
+#i2soft-tab{
+  width:62px
+}
+#i2soft-k25{
+  width:56px
+}
+#i2soft-caps-lock{
+  width:76px
+}
+#i2soft-enter
+{
+  width:84px
+}
+#i2soft-left-shift{
+  width:46px
+}
+#i2soft-right-shift{
+  width:114px
+}
+#i2soft-space{
+  width:246px;
+  text-align:center
+}
+#i2soft-right-ctrl,#i2soft-right-alt,#i2soft-escape{
+  width:62px
+}
+#i2soft-left-ctrl,#i2soft-left-alt,#i2soft{
+  width:60px
+}
+.i2soft-label-reference{
+  color:gray;
+  font-size:.9em;
+  line-height:12px;
+  text-align:left;
+  cursor:default
+}
+.i2soft-label-natural{
+  margin-top:-5px;
+  color:#e0115f;
+  line-height:20px;
+  text-align:center;
+  cursor:default
+}
+.i2soft-label-shift{
+  margin-top:-5px;
+  color:#057cb5;
+  line-height:20px;
+  text-align:center;
+  cursor:default
+}
+#i2soft-k29 .i2soft-label-reference,#i2soft-k32 .i2soft-label-reference{
+  color:#000
+}
+.i2soft-recessed span{
+  color:#3C0
+}
+.i2soft-recessed-hover span{
+  color:#ffd800
+}
+.i2soft-clear{
+  clear:both
+}

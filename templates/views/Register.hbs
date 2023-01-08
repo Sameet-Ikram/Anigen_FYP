@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="./css/Register.css" >
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<!-- <script type="text/javascript">
+	function Home(){
+		window.open("About.html");
+	}
+</script> -->
+
+</head>
+<body>
+  <!-- //If i have to use navbar wala code then: {{>navbar}} -->
+  <!-- {{>navbar}} -->
+  <!-- <h1>Hi</h1> -->
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form action="/Register" method="POST">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required="">
+					<input type="email"  name="email" placeholder="Email" required="">
+					<input type="password" pattern="[a-zA-Z0-9]{8,}" name="pswd" placeholder="Password" required="" title="Must be at least 8 characters">
+					<input type="Confirm_password" name="c_pswd" placeholder="Confirm Password" required="">
+          <button>Sign up</button>
+				</form>
+			</div>
+
+			<!-- <div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div> -->
+	</div>
+</body>
+</html>

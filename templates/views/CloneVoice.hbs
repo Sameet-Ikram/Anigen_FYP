@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- <link rel="stylesheet" href="checking.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto Nastaliq Urdu' rel='stylesheet'>
+  <style media="screen">
+    body {
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    }
+
+    .button-72 {
+      align-items: center;
+      background-color: initial;
+      background-image: linear-gradient(rgba(179, 132, 201, .84), rgba(57, 31, 91, .84) 50%);
+      border-radius: 42px;
+      border-width: 0;
+      box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px, rgba(179, 132, 201, 0.4) 0 8px 12px;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: flex;
+      font-family: Quicksand, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      justify-content: center;
+      letter-spacing: .04em;
+      line-height: 16px;
+      margin: 0;
+      padding: 18px 18px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px, rgba(255, 255, 255, 0.2) 0 0 12px, rgba(57, 31, 91, 0.6) 1px 1px 4px, rgba(57, 31, 91, 0.32) 4px 4px 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+    }
+
+    .button-72:hover {
+      background-image: linear-gradient(#B384C9, #391F5B 50%);
+    }
+
+    @media (min-width: 768px) {
+      .button-72 {
+        font-size: 21px;
+        padding: 18px 34px;
+        margin-bottom: .5em;
+      }
+    }
+
+    .Textt {
+      width: 100em;
+      height: 33em;
+      border: solid white .2em;
+    }
+
+    h3 {
+      margin-right: 9em;
+      margin-left: 2em;
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      font-family: 'Noto Naskh Arabic', serif;
+    }
+
+    .Message_Content {
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/home" style:"color:white;">Home</a>
+  <div class="Textt">
+    <!-- <div class="w3-panel w3-border"> -->
+    <h3> اس لیے موٹر سائیکلوں کو الیکٹرک طرز پر منتقل کر رہے ہیں ، جس کیلئے شہریوں کو مالی معاونت بھی فراہم کی جائیگی ، یکم فروری سے فلیمنٹ والے بلب کی پروڈکشن بند کر رہے ہیں ، جبکہ یکم جولائی سے بجلی والے پنکھوں کی پروڈکشن بھی بند کر دی جائے گی۔‘
+    </h3>
+    <!-- </div> -->
+  </div>
+  <button class="button-72" type="button" onclick="ChangeText()" name="button" role="button">Change Text</button>
+  <input type="text" name="" value="Speaker Name" id="speakername" >
+  <a id="home" href="/home" hidden></a>
+  <form class="" action="/Voice" method="post">
+    <input type="text" name="usermail" id="id1" value="" hidden>
+    <button class="button-72" type="submit" name="button">For Embeddings</button>
+  </form>
+  <div class="container">
+    <div class="display">
+
+
+    </div>
+    <div class="controllers">
+
+    </div>
+  </div>
+  <script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const myVariable = urlParams.get('myVariable');
+  const parseddata=JSON.parse(myVariable);
+  var embedding=parseddata;
+  if(embedding){
+    localStorage.setItem("Embedding",myVariable);
+    alert(localStorage.getItem("Embedding"));
+    document.getElementById("home").click();
+}
+ else{
+  localStorage.setItem("Embedding","");
+ }
+
+
+
+  document.getElementById("id1").value=localStorage.getItem("email");
+    var count = 1;
+
+    function ChangeText() {
+      var urdu_data = document.querySelector("h3");
+      if (count === 1) {
+        urdu_data.innerHTML =
+          "اسلام آباد (ڈیلی پاکستان آن لائن )وفاقی حکومت نے ملک بھر کی تمام مارکیٹس رات ساڑھے 8بجے بند کرنے کا اعلان کر دیا ہے، جبکہ شادی ہالز کو ہر صورت رات 10بجے بند کیا جائے گا۔تفصیلات کے مطابق وزیر دفاع خواجہ آصف نے  وفاقی وزیر توانائی خرم دستگیر کے ہمراہ پریس کانفرنس کرتے ہوئے کہا کہ  بجلی کی بچت کیلئے ہم نے  کابینہ اجلاس میں فیصلہ کیا ہے کہ ملک بھر کی مارکیٹس رات ساڑھے 8بجے  بند کی جائیں گی ،جبکہ شادی ہالز رات 10بجے بند کیے جائیں گے  ۔";
+        count = 2;
+      } else if (count === 2) {
+        urdu_data.innerHTML =
+          " پریس کانفرنس میں انہوں نے کہا کہ ملک میں قانون کی حکمرانی تک ترقی نہیں ہوسکتی، مجھ پر قاتلانہ حملے سےمتعلق جے آئی ٹی کی فائنڈنگ سب کے سامنے لانا چاہتا ہوں، ہمارے ارکان کو بلاکر پیسوں کی آفر کی گئی، سب سے پہلی سازش رجیم چینج کے ذریعے ہوئی، رجیم چینج کے پیچھے ماسٹر مائنڈ کو پتہ نہیں تھا کہ قوم سڑکوں پر نکلےگی، قوم ان کیخلاف کھڑی ہوگئی، سوشل میڈیا کا زمانہ ہے آپ کسی کی آواز کو بند نہیں کر سکتے،";
+        count = 3;
+      } else if (count === 3) {
+        urdu_data.innerHTML =
+          "وزیر داخلہ نے کہا کہ یہ کہنا بالکل غلط ہے کہ ہم ان کے لوگوں کو پکڑ رہے ہیں۔ان کا کہنا تھا کہ جب آپس میں اتحاد ہوتا ہے تو ایک دوسرے کے ساتھ کمپرومائز کرنا پڑتا ہے،اگر پیپلز پارٹی اور ن لیگ نے ملکر الیکشن لڑا تو ہمیں نقصان ہو سکتا ہے ہمیں مل کر الیکشن نہیں لڑنا چاہئے۔ مزید کہا کہ زرداری نے ہمارے کہنے سے پہلے کہا ہے کہ پنجاب میں وزیراعلیٰ ن لیگ کا ہوگا۔ ۔";
+        count = 4;
+
+      } else if (count === 4) {
+        urdu_data.innerHTML =
+          "جنوبی وزیرستان میں سیکورٹی فورسز کا آپریشن، دوران آپریشن فائرنگ کے تبادلے میں 2 انتہائی خطرناک دہشت گرد کمانڈروں سمیت 11 دہشت گرد ہلاک کر دیے گئے۔ پاک فوج کے شعبہ تعلقات عامہ آئی ایس پی آر کے مطابق سیکیورٹی فورسز نے جنوبی وزیرستان کے ضلع وانا میں دہشت گردوں کی موجودگی کی خفیہ اطلاع ملنے پر آپریشن کیا۔ دوران آپریشن دہشت گردی کی بڑی کارروائی کو ناکام بنا دیا گیا،";
+        count = 5;
+      } else {
+        urdu_data.innerHTML =
+          "مریم نواز کے بیٹے جنید صفدر اعوان نے مستقبل میں آباد ہونے کا فیصلہ کر لیا۔جنید صفدر اعوان اپنی اہلیہ عائشہ کے ہمراہ جمعہ کو دوحا سے پاکستان پہنچیں گے۔میڈیا رپورٹس کے مطابق جنید صفدر اعوان مریم نواز کی سیاست میں مدد کرنا چاہتے ہیں۔مریم نواز کو حال ہی میں پارٹی میں اہم ذمہ داریاں سونپی گئی ہیں۔";
+        count = 1;
+      }
+    }
+    const display = document.querySelector('.display')
+    const controllerWrapper = document.querySelector('.controllers')
+
+    const State = ['Initial', 'Record', 'Download']
+    let stateIndex = 0
+    let mediaRecorder, chunks = [],
+      audioURL = ''
+
+    // mediaRecorder setup for audio
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      console.log('mediaDevices supported..')
+
+      navigator.mediaDevices.getUserMedia({
+        audio: true
+      }).then(stream => {
+        mediaRecorder = new MediaRecorder(stream)
+
+        mediaRecorder.ondataavailable = (e) => {
+          chunks.push(e.data)
+        }
+
+        mediaRecorder.onstop = () => {
+
+          document.querySelector('#record').textContent = 'Cloning....'
+
+          let blob = new Blob(chunks, {
+            type: 'audio/wav'
+          })
+          chunks = []
+          audioURL = window.URL.createObjectURL(blob)
+          document.querySelector('audio').src = audioURL
+
+          let formData = new FormData();
+          formData.append("audio_file", blob, "audio.wav");
+
+          // Send the form data to the server.
+          fetch('https://localhost:5000/getembeddings', {
+            method: "POST",
+            cache: "no-cache",
+            body: formData
+          }).then(resp => {
+            if (resp.status === 200) {
+
+              alert("Hi");
+              response = resp.json().then(response => {
+
+                var embedd = response['embedd'];
+                document.querySelector('#record').textContent = 'Record'
+                var speakername = document.querySelector('#speakername').value
+                if (speakername == '' || speakername == null || speakername == 'Speaker Name') {
+                  speakername = 'Unknown'
+                }
+                localStorage.setItem("embeddings", embedd);
+                localStorage.setItem("speakername", speakername);
+              });
+
+
+
+            } else {
+              console.error("Error:", resp)
+            }
+          }).catch(err => {
+            console.error(err);
+          });
+        }
+      }).catch(error => {
+        console.log('Following error has occured : ', error)
+      })
+    } else {
+      stateIndex = ''
+      application(stateIndex)
+    }
+
+    const clearDisplay = () => {
+      display.textContent = ''
+    }
+
+    const clearControls = () => {
+      controllerWrapper.textContent = ''
+    }
+
+    const record = () => {
+      stateIndex = 1
+      mediaRecorder.start()
+      application(stateIndex)
+    }
+
+    const stopRecording = () => {
+      stateIndex = 2
+      mediaRecorder.stop()
+      application(stateIndex)
+    }
+
+    const downloadAudio = () => {
+      const downloadLink = document.createElement('a')
+      downloadLink.href = audioURL
+      downloadLink.setAttribute('download', 'audio')
+      downloadLink.click()
+    }
+
+    const addButton = (id, funString, text) => {
+      const btn = document.createElement('button')
+      btn.id = id
+      btn.setAttribute('onclick', funString)
+      btn.textContent = text
+      btn.className = "button-72"
+      controllerWrapper.append(btn)
+    }
+
+    const addMessage = (text) => {
+      const msg = document.createElement('p')
+      msg.textContent = text
+      msg.className = "Message_Content"
+      display.append(msg)
+    }
+
+    const addAudio = () => {
+      const audio = document.createElement('audio')
+      audio.controls = true
+      audio.src = audioURL
+      display.append(audio)
+    }
+
+    const application = (index) => {
+      switch (State[index]) {
+        case 'Initial':
+          clearDisplay()
+          clearControls()
+
+          addButton('record', 'record()', 'Start Recording')
+          break;
+
+        case 'Record':
+          clearDisplay()
+          clearControls()
+
+          addMessage('Recording...')
+          addButton('stop', 'stopRecording()', 'Stop Recording')
+          break
+
+        case 'Download':
+          clearControls()
+          clearDisplay()
+
+          addAudio()
+          addButton('record', 'record()', 'Record Again')
+          break
+
+        default:
+          clearControls()
+          clearDisplay()
+
+          addMessage('Your browser does not support mediaDevices')
+          break;
+      }
+
+    }
+
+    application(stateIndex)
+  </script>
+</body>
+
+</html>
